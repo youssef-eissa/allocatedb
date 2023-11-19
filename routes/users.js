@@ -12,7 +12,7 @@ const usersData = [
         username: 'mohamed',
         email: 'mohamed@ewq.dsa',
         password: '123456',
-        type: 'admin',
+        type: 'user',
 }
 ]
 
