@@ -29,15 +29,15 @@ router.get('/admins/:username', (req, res) => {
 
 router.post('/admins', (req, res) => {
   
-        const newUser={
-        id: usersData.length + 1,
+        const newAdmin={
+        id: AdminsData.length + 1,
         name: req.body.name,
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
         type: req.body.type,
     }
-    AdminsData.push(newUser)
+    AdminsData.push(newAdmin)
     res.send(AdminsData)
     }
 
