@@ -31,19 +31,8 @@ router.get('/users/:username', (req, res) => {
 })
 
 
-router.post('/users', [
-    check('username').exists().trim().not().isEmpty().custom(async username => {
-                const value = await isMentionNameInUse(username);
-                if (value) {
-                    throw new Error('username is already exists!!!');
-                }
-            }),
-    
-], (req, res) => {
-    const error=validationResult(req)
-    if(!error.isEmpty()){
-        return res.status(400).json({error:error.array()})
-    } else {
+router.post('/users', (req, res) => {
+  
         const newUser={
         id: usersData.length + 1,
         name: req.body.name,
@@ -59,7 +48,7 @@ router.post('/users', [
     
     
 
-})
+)
 
 router.put('/users/:id', (req, res) => {
     let id = req.params.id
