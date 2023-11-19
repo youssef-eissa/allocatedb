@@ -16,6 +16,7 @@ const usersData = [
 }
 ]
 
+
 router.get('/users', (req, res) => {
     res.send(usersData);
 })
@@ -79,7 +80,6 @@ router.put('/users/:id', (req, res) => {
         
     }
 })
-
 
 
 
