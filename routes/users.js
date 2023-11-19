@@ -1,9 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const { check,validationResult } = require('express-validator');
-
-
-
 
 const usersData = [
     {
@@ -15,7 +11,6 @@ const usersData = [
         type: 'user',
 }
 ]
-
 
 router.get('/users', (req, res) => {
     res.send(usersData);
@@ -44,9 +39,6 @@ router.post('/users', (req, res) => {
     usersData.push(newUser)
     res.send(usersData)
     }
-
-    
-    
 
 )
 
