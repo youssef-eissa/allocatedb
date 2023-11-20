@@ -15,7 +15,7 @@ const usersData = [
 router.get('/users', (req, res) => {
     res.send(usersData);
 })
-router.get('/users/:username', (req, res) => {
+router.post('/users/:username', (req, res) => {
     const found = usersData.some(user => user.username === req.params.username)
     if(found){
         res.json(usersData.filter(user => user.username === req.params.username))

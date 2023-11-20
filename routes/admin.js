@@ -16,7 +16,7 @@ const AdminsData = [
 router.get('/admins', (req, res) => {
     res.send(AdminsData);
 })
-router.get('/admins/:username', (req, res) => {
+router.post('/admins/:username', (req, res) => {
     const found = AdminsData.some(admin => admin.username === req.params.username)
     if(found){
         res.json(AdminsData.filter(admin => admin.username === req.params.username))
