@@ -20,7 +20,7 @@ router.post('/users/:username', (req, res) => {
     if(found){
         res.json(usersData.filter(user => user.username === req.params.username))
     }else{
-        res.status(400).json({msg:`no user with id ${req.params.id}`})
+        res.status(400).json({msg:`no User Found `})
     }
 
 })
