@@ -61,7 +61,7 @@ router.put('/users/:id', (req, res) => {
         user.username = username
         user.email = email
         user.password = password
-        user.sell = sell
+        user.sell = [...user.sell,sell]
         user.propertyImg = propertyImg
         res.send(user)
         
