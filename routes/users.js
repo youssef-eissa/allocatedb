@@ -38,7 +38,7 @@ router.post('/users', (req, res) => {
         password: req.body.password,
         type: req.body.type,
         sell: [],
-        propertyImg: req.body.propertyImg
+        propertyImg: ''
     }
     usersData.push(newUser)
     res.send(usersData)
