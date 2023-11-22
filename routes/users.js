@@ -9,7 +9,8 @@ const usersData = [
         email: 'mohamed@ewq.dsa',
         password: '123456',
         type: 'user',
-        sell:[]
+        sell: [],
+        propertyImg:''
 }
 ]
 
@@ -37,6 +38,7 @@ router.post('/users', (req, res) => {
         password: req.body.password,
         type: req.body.type,
         sell: [],
+        propertyImg: req.body.propertyImg
     }
     usersData.push(newUser)
     res.send(usersData)
@@ -51,6 +53,7 @@ router.put('/users/:id', (req, res) => {
     let email = req.body.email
     let password = req.body.password
     let sell = req.body.sell
+    let propertyImg = req.body.propertyImg
     let index = usersData.findIndex(user => user.id === parseInt(id))
     if (index >= 0) {
         let user = usersData[index]
@@ -59,6 +62,7 @@ router.put('/users/:id', (req, res) => {
         user.email = email
         user.password = password
         user.sell = sell
+        user.propertyImg = propertyImg
         res.send(user)
         
     }
